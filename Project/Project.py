@@ -76,8 +76,7 @@ sns.catplot(
 )
 plt.show()
 
-# NEED 2 MORE CHARTS
-
+#Pie chart to show job satisfaction scores in %'s
 print(merged_satisfaction["JobSatisfaction"].value_counts())
 labels = '0', '1', '2', '3', '4'
 sizes = [20, 840, 860, 1323, 1367]
@@ -88,4 +87,18 @@ ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
 ax1.axis('equal')
 plt.title("Job satisfaction score %'s")
 
+plt.show()
+
+#Bar chart showing averages
+average_dict = {"Satisfaction":2.71, "Age":37, "Years at company":7, "Dist from home in KM":9.19}
+category = list(average_dict.keys())
+value = list(average_dict.values())
+
+fig = plt.figure(figsize= (10, 5))
+
+plt.bar(category,value, color = "maroon", width= 0.4)
+
+plt.xlabel("Categories")
+plt.ylabel("Average figure")
+plt.title("The average figure for multiple categories")
 plt.show()
