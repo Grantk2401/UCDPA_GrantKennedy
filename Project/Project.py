@@ -66,6 +66,7 @@ sns.set_theme(style="darkgrid")
 sns.displot(
     merged_satisfaction, x="JobSatisfaction", col= "Gender",
 )
+plt.show()
 
 #catplot showing job satisfaction by department and job level
 sns.catplot(
@@ -73,6 +74,18 @@ sns.catplot(
     x="Department", y= "JobSatisfaction", hue= "JobLevel",
     ci="sd", palette="dark", alpha=.6, height=6,
 )
+plt.show()
 
 # NEED 2 MORE CHARTS
-nnnn
+
+print(merged_satisfaction["JobSatisfaction"].value_counts())
+labels = '0', '1', '2', '3', '4'
+sizes = [20, 840, 860, 1323, 1367]
+
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal')
+plt.title("Job satisfaction score %'s")
+
+plt.show()
